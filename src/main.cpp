@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 
     // Add a list of all options the application can be run with.
     options.add_options()
-            ("i,inet", "IP address the server will be bound to", cxxopts::value<std::string>()->default_value(psi::DEFAULT_NETWORK_INTERFACE))
+            ("i,inet", "Interface the application will use to send and receive datagrams", cxxopts::value<std::string>()->default_value(psi::DEFAULT_NETWORK_INTERFACE))
             ("t,timeout", "Number of seconds for which the application will be waiting for responses", cxxopts::value<uint32_t>()->default_value(psi::DEFAULT_MAX_SCAN_SECONDS))
             ("h,help" , "Prints help")
             ;
