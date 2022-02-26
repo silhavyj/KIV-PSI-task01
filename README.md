@@ -1,5 +1,7 @@
 # KIV/PSI task 01 - IPv4 UDP Multicast client
 
+This project shows a possible implementation of a simple multicast client that uses SSDP (Simple Service Discovery Protocol) to discover UPnP devices on a local network. https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol
+
 - [Build](#build)
   * [Requirements](#requirements)
   * [Compilation](#compilation)
@@ -10,8 +12,6 @@
 - [Discovered devices](#discovered-devices)
   * [Samples of responses from a Samsung TV](#samples-of-responses-from-a-samsung-tv)
 - [Responses captured by WireShark](#responses-captured-by-wireshark)
-
-This project shows a possible implementation of a simple multicast client that uses SSDP (Simple Service Discovery Protocol) to discover UPnP devices on a local network. https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol
 
 The application connects to the multicast group using the IP address of `239.255.255.250` and port `1900`. Then, it sends a discovery message which has the following format.
 
