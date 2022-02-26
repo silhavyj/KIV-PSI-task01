@@ -1,19 +1,19 @@
 # KIV/PSI task 01 - IPv4 UDP Multicast client
 
 - [Build](#build)
-    * [Requirements](#requirements)
-    * [Compilation](#compilation)
-    * [External libraries](#external-libraries)
+  * [Requirements](#requirements)
+  * [Compilation](#compilation)
+  * [External libraries](#external-libraries)
 - [Execution](#execution)
-    * [Examples](#examples)
-    * [Setting up firewall rules](#setting-up-firewall-rules)
-    * [Discovered devices](#discovered-devices)
-    * [Samples of responses from a Samsung TV](#samples-of-responses-from-a-samsung-tv)
-    * [Responses captured by WireShark](#responses-captured-by-wireshark)
+  * [Examples](#examples)
+  * [Setting up firewall rules](#setting-up-firewall-rules)
+- [Discovered devices](#discovered-devices)
+  * [Samples of responses from a Samsung TV](#samples-of-responses-from-a-samsung-tv)
+- [Responses captured by WireShark](#responses-captured-by-wireshark)
 
 This project shows a possible implementation of a simple multicast client that uses SSDP (Simple Service Discovery Protocol) to discover UPnP devices on a local network. https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol
 
-This application connects to the multicast group using the IP address of `239.255.255.250` and port `1900`. Then, it sends a discovery message which has the following format.
+The application connects to the multicast group using the IP address of `239.255.255.250` and port `1900`. Then, it sends a discovery message which has the following format.
 
 ```
 "M-SEARCH * HTTP/1.1\r\n"
@@ -80,9 +80,9 @@ Usage:
 
 ### Setting up firewall rules
 
-If you're not receiving any responses, it may be because your firewall is blocking them off. To fix this, you can temporarily turn the firewall off. However, this option is not recommended as it may result in security breach. A better way would be to temporarily add a new firewall rule allowing the packets to go through. The SSDP protocol is a UDP protocol that uses port 1900.
+If you're not receiving any responses, it may be because your firewall is blocking them off. To fix this, you can temporarily turn the firewall off. However, this option is not recommended as it may result in a security breach. A better way would be to temporarily add a new firewall rule allowing the packets to go through. The SSDP protocol is a UDP protocol that uses port 1900.
 
-### Discovered devices
+## Discovered devices
 
 I tested the client within my home environment and as a result, I received over 30 responses from 4 different physical devices.
 
@@ -122,6 +122,6 @@ USN: uuid:7bf2e75a-1286-4a99-af56-e7269dbb9150::urn:samsung.com:service:MultiScr
 Content-Length: 0
 ```
 
-### Responses captured by WireShark
+## Responses captured by WireShark
 
 <img src="img/01.png">
